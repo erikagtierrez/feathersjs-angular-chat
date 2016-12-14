@@ -25,7 +25,7 @@ onSubmit(form: NgForm){
             "email": form.value.email,
             "password": form.value.password
         	}
-        	this.router.navigateByUrl("");
+        	this.router.navigateByUrl("/chat");
       }
 });
 }

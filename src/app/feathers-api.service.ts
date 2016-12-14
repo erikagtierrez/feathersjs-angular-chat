@@ -29,5 +29,16 @@ export class FeathersApiService {
 		return this.http.post(this.apiUrl + '/users', JSON.stringify(user), { headers: headers }).map(
 			(response: Response) => response.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error')); 			
   }
+
+  getMessages(token: string){
+     let headers = new Headers({ 'Content-Type': 'application/json' })
+		let user = {
+			"token": token,
+		}
+		console.log(JSON.stringify(user));
+		return this.http.post(this.apiUrl + '/users', JSON.stringify(user), { headers: headers }).map(
+			(response: Response) => response.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error')); 			
+  }
+
 }
 

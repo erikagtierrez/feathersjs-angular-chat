@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
             "email": form.value.email,
             "password": form.value.password
         	}
-        	this.router.navigateByUrl("");
+        	this.router.navigateByUrl("/chat");
       }else{
         console.log("Error on sign up " + data.code);
       }});

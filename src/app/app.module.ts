@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
 import { FeathersApiService } from './feathers-api.service';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     IndexComponent,
-    SignupComponent
+    SignupComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

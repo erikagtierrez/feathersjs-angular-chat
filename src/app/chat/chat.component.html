@@ -1,0 +1,24 @@
+<p>
+  lol works!
+</p>
+<button onclick="sendMessage()">Send Message</button>
+<script type="text/javascript">
+function sendMessage(){
+  console.log("HOLA")
+     messages.create({ text: 'Hello from websocket!' });
+}
+  // Establish a Socket.io connection to the local server
+  var socket = io.connect('http://localhost:3030');
+  // Create a client side Feathers application that uses the socket
+  // for connecting to services
+  var app = feathers();
+  app.configure(feathers.socketio(socket));
+  // Retrieve a connection to the /messages service on the server
+  // This service will use websockets for all communication
+  var messages = app.service('messages');
+
+  // Listen for when a new message has been created
+  messages.on('created', function(message) {
+    console.log('Someone created a message', message);
+  });
+</script>
