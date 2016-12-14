@@ -9,13 +9,13 @@ import { FeathersApiService } from '../feathers-api.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
  providers:[FeathersApiService]
-})
+  })
+
 export class SignupComponent implements OnInit {
 
  constructor(private router: Router, private feathersService: FeathersApiService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 onSubmit(form: NgForm){
     this.feathersService.signup(form.value.email,form.value.password).subscribe(
@@ -27,5 +27,7 @@ onSubmit(form: NgForm){
         	}
         	this.router.navigateByUrl("");
       }
+});
+}
 }
 

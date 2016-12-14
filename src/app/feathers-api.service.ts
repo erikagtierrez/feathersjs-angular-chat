@@ -16,8 +16,7 @@ export class FeathersApiService {
 		}
 		console.log(JSON.stringify(user));
 		return this.http.post(this.apiUrl + '/auth/local', JSON.stringify(user), { headers: headers }).map(
-			(response: Response) => response.json()
-		);
+			(response: Response) => response.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error')); 
   }
 
   signup(name: string, password:string){
@@ -28,8 +27,7 @@ export class FeathersApiService {
 		}
 		console.log(JSON.stringify(user));
 		return this.http.post(this.apiUrl + '/users', JSON.stringify(user), { headers: headers }).map(
-			(response: Response) => response.json()
-		);
+			(response: Response) => response.json()).catch((error:any) => Observable.throw(error.json().error || 'Server error')); 			
   }
 }
 
