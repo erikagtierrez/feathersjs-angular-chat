@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component'
 import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
+import { FeathersApiService } from './feathers-api.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { SignupComponent } from './signup/signup.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FeathersApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
